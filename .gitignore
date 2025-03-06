@@ -1,0 +1,19 @@
+# Ignore Visual Studio and VS Code specific files
+.vs/
+.vscode/
+
+# Ignore build and compiled files
+bin/
+obj/
+
+# Ignore user-specific and temporary files
+*.user
+*.suo
+*.cache
+*.log
+*.db
+*.pid
+
+# Ignore environment settings
+.env
+secrets.json
