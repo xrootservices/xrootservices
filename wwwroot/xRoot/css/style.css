@@ -975,103 +975,291 @@ a:hover {
   }
 }
 
-.pricing {
-  position: relative;
-  overflow: visible;
+/*pricing start*/
+
+
+
+epm {
+    font-size: x-large;
 }
 
-.pricing-table {
-  padding: 50px 35px 30px;
-  transition: .2s ease;
+.cdn p {
+    margin: 0;
+    padding: 0;
+    font-size: small;
 }
 
-@media (max-width: 1200px) {
-  .pricing-table {
-    padding: 30px 20px;
-  }
+.cdn .epm2 {
+    font-size: 1rem;
 }
 
-.pricing-table h1 {
-  font-size: 65px;
+.price .pika p {
+    text-align: center;
+    font-size: large;
+    padding: 0;
+    margin: 0;
 }
 
-.pricing-table h1 span {
-  font-size: 20px;
-  vertical-align: top;
-  line-height: 65px;
-  margin-right: 5px;
+
+.price .pika .ourprice p {
+    text-align: center;
+    font-size: 45px;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
-.pricing-table:hover {
-  box-shadow: 0px 59px 43px 0px rgba(216, 233, 243, 0.3);
+.price .pika .ourprice {
+    text-align: center;
+    font-weight: 599;
+    font-size: 220%;
+    padding: 1px;
 }
 
-.pricing-table.table-1 {
-  background-image: linear-gradient(59deg, #d5fc71 0%, #64feab 95%);
+.xsev {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    font-weight: 400;
+    color: black;
 }
 
-.pricing-table.table-2 {
-  background-image: linear-gradient(59deg, #06ffdf 0%, #42dbef 95%);
+    .xsev .services {
+        border: 2px solid rgb(214, 214, 218);
+        border-radius: 20px;
+        width: 22%; /* Adjusted for better layout */
+        margin: 0%;
+        background-color: white;
+        /* Subtle shadow */
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .xsev .services:hover {
+            transform: scale(1.01);
+            box-shadow: 4px 4px 10px rgba(237, 4, 4, 0.1);
+            /* Slight zoom on hover */
+        }
+
+        .xsev .services .cdn {
+            border-bottom: 1px solid rgb(210, 204, 204);
+            padding: 10px;
+            height: 130px;
+            font-size: 1.3rem;
+            text-align: left;
+            box-shadow: 0px 0.2px 3px wheat;
+        }
+
+            .xsev .services .cdn:hover {
+                transform: scale(1.01);
+                box-shadow: 4px 4px 10px wheat;
+            }
+
+            .xsev .services .cdn p {
+                font-weight: 100;
+            }
+
+        .xsev .services .add {
+            padding: 10px;
+            height: auto;
+        }
+
+            .xsev .services .add p {
+                font-size: 15px;
+            }
+
+
+
+        .xsev .services .rupay {
+            height: 150px;
+        }
+
+.low {
+    text-align: center;
+    margin: 15px;
+    padding: 6px;
+    color: black;
 }
 
-.pricing-table.table-3 {
-  background-image: linear-gradient(59deg, #0bfce0 0%, #c5fd78 95%);
+
+
+
+
+.xsev .services .log {
+    display: flex;
+    align-items: center; /* Aligns image and text */
+    padding: 10px;
+    font-size: x-large;
+    height: 100px;
+    gap: 10px; /* Adds spacing between image and text */
 }
 
-.pricing-btn {
-  font-size: 25px;
-  font-weight: 700;
-  color: #091337;
+    .xsev .services .log .logo-container img {
+        width: 50px; /* Adjust size */
+        height: auto;
+        border-radius: 3px;
+        margin: 20px; /* Optional: rounded corners */
+    }
+
+/*  Responsive Fixes */
+@media screen and (max-width: 768px) {
+    .xsev .services .log {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        .xsev .services .log .logo-container img {
+            width: 40px; /* Smaller size for mobile */
+        }
 }
 
-@media (max-width: 1200px) {
-  .pricing-btn {
-    padding: 5px;
-  }
+/*  Responsive Design */
+@media screen and (max-width: 1024px) {
+    .xsev {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+        .xsev .services {
+            width: 45%;
+            margin-top: 10px;
+            /* Adjust for tablets */
+        }
 }
 
-.pricing-btn:hover {
-  color: #008dec;
+@media screen and (max-width: 768px) {
+    .xsev {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .xsev .services {
+            width: 90%;
+            margin-top: 10px; /* Full width on small screens */
+        }
 }
 
-.pricing-bg-shape-1 {
-  position: absolute;
-  left: 30%;
-  top: 100px;
-  z-index: -1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.but {
+    text-align: center;
+    margin-top: 50px;
 }
 
-@media (max-width: 767px) {
-  .pricing-bg-shape-1 {
-    display: none;
-  }
+    .but .my-button {
+        border: 2px solid rgb(157, 157, 233);
+        border-radius: 35px;
+        color: rgb(58, 14, 233);
+        background-color: honeydew;
+        font-size: large;
+        padding: 8px 10px;
+        cursor: pointer; /* Makes it clear it's clickable */
+        transition: 0.9s ease; /* Smooth hover effect */
+    }
+
+        /* Hover Effect */
+        .but .my-button:hover {
+            background-color: blue;
+            color: white;
+        }
+
+        /* Styling for the arrow span */
+        .but .my-button span {
+            font-size: 25px;
+            padding: 4px 10px;
+            color: antiquewhite;
+            background-color: blue;
+            margin-left: 20px;
+            border: 2px blue solid;
+            border-radius: 25px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s ease;
+        }
+
+        /* Hover effect on arrow */
+        .but .my-button:hover span {
+            background-color: rgb(2, 2, 145);
+            color: white;
+        }
+
+
+
+
+
+/*goal bindu*/
+.e-hotspot {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.pricing-bg-shape-2 {
-  position: absolute;
-  right: 10%;
-  top: 110px;
-  z-index: -1;
+/* Button/Icon Styling */
+.e-hotspot__button {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100%;
 }
 
-@media (max-width: 767px) {
-  .pricing-bg-shape-2 {
-    display: none;
-  }
+
+
+/* Tooltip Styling */
+.e-hotspot__tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: whitesmoke;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    visibility: hidden;
+    width: 230px;
+    height: auto;
+    opacity: 3;
+    box-shadow: 0px 0.2px 3px black;
+    transition: opacity 0.10s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.pricing-bg-shape-3 {
-  position: absolute;
-  bottom: 20%;
-  left: 0;
-  z-index: -1;
+/* Show Tooltip on Hover */
+.e-hotspot:hover .e-hotspot__tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
 }
 
-@media (max-width: 767px) {
-  .pricing-bg-shape-3 {
-    display: none;
-  }
+.box {
+    width: 100%;
 }
+
+.boxes .box2 {
+    text-align: left;
+    margin-top: 10px;
+    
+}
+
+.boxes {
+    display: flex;
+}
+
 /**blog start*/
 
 
