@@ -223,8 +223,8 @@ ul li:hover .dropdown1
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
     transition-duration: .25s;
-    width: 700px;
-    background-color:white;
+    width: 650px;
+    background-color: white;
 }
 
 .dropdown12:hover .dropdown-content2 {
@@ -1270,7 +1270,7 @@ epm {
 
 .blog-btt .blog-btt-icon {
     height: 50px;
-    padding: auto;
+   
     position: relative;
     overflow: hidden;
     
@@ -1459,7 +1459,7 @@ epm {
 
 /* service page */
 .service-bg-image {
-  background-size: containe;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center 400px;
 }
@@ -1773,3 +1773,15 @@ textarea.form-control {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+  
+  .et_pb_module_header {
+      font-size: 24px;
+  }
+  
+  .et_pb_promo h2 {
+      font-size: 30px;
+  }
+
+
+
