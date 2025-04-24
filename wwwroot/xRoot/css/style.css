@@ -1,4 +1,4 @@
-ttt/*!------------------------------------------------------------------
+/*!------------------------------------------------------------------
 [MAIN STYLESHEET]
 
 PROJECT:	Project Name
@@ -10,11 +10,11 @@ VERSION:	Versoin Number
 /* 1.1 typography */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 body {
-  line-height: 31px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  font-size: 17px;
+    line-height: 31px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    font-size: 17px;
 }
 
 p, .paragraph {
@@ -1270,7 +1270,11 @@ epm {
 
 .blog-btt .blog-btt-icon {
     height: 50px;
+<<<<<<< HEAD
+  
+=======
    
+>>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
     position: relative;
     overflow: hidden;
     
@@ -1459,7 +1463,11 @@ epm {
 
 /* service page */
 .service-bg-image {
+<<<<<<< HEAD
+  background-size:contain;
+=======
   background-size: contain;
+>>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
   background-repeat: no-repeat;
   background-position: center 400px;
 }
@@ -1747,11 +1755,11 @@ textarea.form-control {
 }
 
 .contact-bg-4 {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
-  z-index: -1;
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
 }
+
 
 @media (max-width: 767px) {
   .contact-bg-4 {
@@ -1774,6 +1782,590 @@ textarea.form-control {
 
 /*# sourceMappingURL=maps/style.css.map */
 
+<<<<<<< HEAD
+
+
+/*web scraping services css start*/
+/* Default styles */
+.banner-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+    .banner-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Media Query for Tablets and Smaller Devices */
+@media (max-width: 768px) {
+    /* Adjust heading */
+    .banner-text h1 {
+        font-size: 2em;
+        padding: 5px; /* Make the heading smaller on mobile */
+    }
+
+    /* Adjust paragraph text */
+    .banner-text p {
+        font-size: 1em; /* Adjust the paragraph font size */
+        padding: 0 5px; /* Add some padding for readability */
+    }
+
+    /* Adjust banner image */
+    .banner-wrapper img {
+        width: 100%; /* Ensure the image takes up the full width of the screen */
+        height: 250px; /* Maintain the aspect ratio */
+    }
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .banner-text h1 {
+        font-size: 1em; /* Even smaller heading on very small screens */
+    }
+
+    .banner-text p {
+        font-size: 0.8em; /* Slightly smaller paragraph text */
+        padding: 0 15px; /* Adjust padding */
+    }
+}
+
+.darkBg {
+    background-color: #e0e3ea; /* Dark background */
+    color: rgb(170, 167, 167);
+}
+
+.stat-card {
+    background-color: #ffffff; /* Slightly lighter dark for contrast */
+    border: none;
+    margin-top: 15px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    height:120px;
+    transition: transform 0.3s ease;
+}
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+.redTxt {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ef4444; /* Tailwind's red-500 */
+}
+
+.para {
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: rgba(13, 12, 12, 0.656);
+}
+
+
+/* Media Query for Tablet and Smaller Devices */
+@media (max-width: 768px) {
+    .stat-card {
+        height:auto;
+        padding: 15px;
+        margin-top: 10px; /* Reduced top margin for better alignment */
+    }
+
+    .redTxt {
+        font-size: 1.6rem; /* Slightly bigger text for mobile readability */
+    }
+
+    .para {
+        font-size: 1rem; /* Increase font size for readability */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .stat-card {
+        width:100%;
+        padding: 12px 8px; /* Reduced padding for small screens */
+    }
+
+    .redTxt {
+        font-size: 1rem; /* Make the text a bit smaller on small screens */
+    }
+
+    .para {
+        font-size: 0.8rem; /* Keep paragraph text readable */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default Styles */
+.section-1 {
+    padding-bottom: 5rem;
+    /* Light background */
+}
+
+h2.fw-bold {
+    font-size: 3rem; /* Default heading size */
+    font-weight: 700;
+    padding-bottom: 6px;
+}
+
+.row .book {
+    padding: 30px;
+}
+
+.book .hrline {
+    width: 30%; /* 40% of the parent container's width */
+    /* 3px solid red border */
+    height: 3px; /* Thickness of the line */
+    background-color: rgb(240, 17, 17); /* Red color for the line */
+    border: none;
+}
+
+.book p {
+    font-size: large;
+}
+
+p.mb-3 {
+    font-size: 1.8rem; /* Default paragraph size */
+    line-height: 1.6;
+}
+
+iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+/* Media Query for Tablet Screens and Smaller Devices */
+@media (max-width: 768px) {
+    .section-1 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    h2.fw-bold {
+        font-size: 2rem; /* Adjust heading size on smaller screens */
+    }
+
+    p.mb-3 {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    /* Stack content vertically for smaller screens */
+    .row {
+        flex-direction: column-reverse; /* Stack form below content */
+    }
+
+    /* Adjust iframe height for smaller devices */
+    iframe {
+        height: 400px;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .section-1 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    h2.fw-bold {
+        font-size: 1.7rem; /* Smaller heading size for mobile */
+    }
+
+    p.mb-3 {
+        font-size: 0.9rem; /* Smaller paragraph text for better fit */
+    }
+
+    iframe {
+        height: 350px; /* Reduce iframe height on very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* DefaultDefault Styles */
+.section-2 {
+    padding: 4rem 0; /* Padding for spacing */
+    background-color: #f4f4f4; /* Light grey background */
+}
+
+    .section-2 .tech-h2 {
+        font-size: 3rem; /* Larger font for the heading */
+        font-weight: bold;
+        color: #333;
+    }
+
+.section-2 .row p {
+    font-size: 1rem;
+}
+
+.section-2 .hrline {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: #ff031a 2px solid;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.recBullet {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+    .recBullet li {
+        font-size: 1.1rem;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+.section-2-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul.recBullet {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove padding */
+}
+
+    ul.recBullet li::before {
+        content: "\25AA"; /* Small filled square bullet */
+        color: #ff031a; /* Red color for the bullet */
+        display: inline-block;
+        width: 25px; /* Width of the bullet */
+        margin-left: 0; /* Remove any default left margin */
+        font-size: 34px; /* Make the bullet large */
+        margin-right: 10px; /* Space between the bullet and text */
+    }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tech-h2 {
+        font-size: 2rem; /* Adjust heading size on smaller screens */
+    }
+
+    .recBullet li {
+        font-size: 1rem; /* Adjust font size for list items */
+    }
+
+    .section-2-card {
+        padding: 1.5rem; /* Reduce padding on smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-h2 {
+        font-size: 1.5rem; /* Smaller heading size for mobile */
+    }
+
+    .recBullet li {
+        font-size: 0.9rem; /* Further reduce font size for mobile */
+    }
+
+    .section-2-card {
+        padding: 1rem; /* Smaller padding for mobile */
+    }
+}
+
+
+
+
+.dynamicBlog {
+    background: black; /* Gradient background */
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+    .dynamicBlog .tech-h2 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+.color-white {
+    color: #ffffff;
+}
+
+.section-2-card {
+    background: #ffffff;
+    color: #333333;
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .section-2-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+.icon-box {
+    margin-bottom: 20px;
+}
+
+.icons img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.card-description {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #666;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-2-card {
+        margin-bottom: 20px;
+    }
+
+    .tech-h2 {
+        font-size: 28px;
+    }
+}
+
+
+
+
+
+
+
+/* Section Base Styling krehjfkljsdfv fsndklmvnkldsvnkldsvnkldsvjdsklvjkldfsvnkldsvnkldshfklsjvhdkljsfhvkljdhvkldshfvkldshvhfklhvfdskjfhklfjdhvkldshfvkfdhklvhklj */
+
+
+
+.web-scraping-top{
+    margin-top: 6rem !important;
+}
+
+
+.container .feek {
+    text-align: center;
+    font-size: 3rem;
+}
+.accordion_item {
+    background: #fff;
+    margin: 20px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+}
+
+.accordion_head {
+    padding: 30px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .accordion_head h3 {
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+.plusminus i {
+    font-size: 18px;
+    color: #007bff;
+    transition: transform 0.3s ease;
+}
+
+.accordion_body {
+    background: #fff;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 10px;
+    transition: all 1s ease;
+}
+
+    .accordion_body.open {
+        max-height: 500px;
+        
+    }
+
+    .accordion_body p {
+        margin: 10px;
+        padding:20px;
+    }
+
+@media (max-width: 500px) {
+    .accordion_head h3 {
+        font-size: 16px;
+    }
+}
+/*letest intest*/
+
+
+
+
+.sectionPadding .row .inner-box {
+margin:0px 180px;
+}
+
+.sectionPadding .tech-h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.aftPara {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.inner-box {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    height: 100%;
+
+}
+
+    .inner-box:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.mainImgBox img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+    .mainImgBox img:hover {
+        transform: scale(1.03);
+    }
+
+.mainContent {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eee;
+    width: 70%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ff0000;
+    box-sizing: border-box;
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.inner-box {
+    position: relative;
+    padding-bottom: 60px;
+}
+
+
+
+.mainContent p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.mainContent a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+}
+
+    .mainContent a:hover {
+        text-decoration: underline;
+    }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .mainContent {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    .tech-h2 {
+        font-size: 2rem;
+    }
+
+    .aftPara {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .mainContent {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .tech-h2 {
+        font-size: 1.8rem;
+    }
+
+    .aftPara {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+
+/*web scraping services css end*/
+=======
   
   .et_pb_module_header {
       font-size: 24px;
@@ -1785,3 +2377,4 @@ textarea.form-control {
 
 
 
+>>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
