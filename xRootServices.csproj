@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\xRoot\css\NewFolder\" />
+    <Folder Include="wwwroot\xRoot\images\webscrapingservices\" />
   </ItemGroup>
 
 </Project>
