@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\WebDataScraping\NewFolder\" />
     <Folder Include="wwwroot\xRoot\css\NewFolder\" />
     <Folder Include="wwwroot\xRoot\images\webscrapingservices\" />
   </ItemGroup>
