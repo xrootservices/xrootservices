@@ -145,7 +145,7 @@ ul {
     transform-origin: 50% -50px;
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .25s;
+    transition-duration: .50s;
     background-color: white;
 }
 
@@ -181,7 +181,7 @@ ul li:hover .dropdown1
     background-color: white;
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .25s;
+    transition-duration: .50s;
     width: 330px;
 }
 .dropdown12:hover .dropdown-content{
@@ -202,7 +202,7 @@ ul li:hover .dropdown1
     transform: translateY(-20%) translateX(-1%);
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .25s;
+    transition-duration: .50s;
     width: 650px;
     background-color: white;
 }
@@ -222,7 +222,7 @@ ul li:hover .dropdown1
     transform: translateY(-20%) translateX(-1%);
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .25s;
+    transition-duration: .50s;
     width: 650px;
     background-color: white;
 }
@@ -244,7 +244,7 @@ ul li:hover .dropdown1
     transform: translateY(-20%) translateX(-1%);
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .25s;
+    transition-duration: .50s;
     background-color: white;
 }
 
@@ -1270,11 +1270,6 @@ epm {
 
 .blog-btt .blog-btt-icon {
     height: 50px;
-<<<<<<< HEAD
-  
-=======
-   
->>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
     position: relative;
     overflow: hidden;
     
@@ -1463,11 +1458,11 @@ epm {
 
 /* service page */
 .service-bg-image {
-<<<<<<< HEAD
+
   background-size:contain;
-=======
+
   background-size: contain;
->>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
+
   background-repeat: no-repeat;
   background-position: center 400px;
 }
@@ -1782,7 +1777,7 @@ textarea.form-control {
 
 /*# sourceMappingURL=maps/style.css.map */
 
-<<<<<<< HEAD
+
 
 
 /*web scraping services css start*/
@@ -2365,7 +2360,7 @@ margin:0px 180px;
 
 
 /*web scraping services css end*/
-=======
+
   
   .et_pb_module_header {
       font-size: 24px;
@@ -2377,4 +2372,3 @@ margin:0px 180px;
 
 
 
->>>>>>> 84a50f011cc44f88fe7391e35c8f8a8ff77153e4
