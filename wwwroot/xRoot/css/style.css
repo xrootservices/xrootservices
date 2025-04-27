@@ -182,7 +182,7 @@ ul li:hover .dropdown1
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
     transition-duration: .50s;
-    width: 330px;
+    
 }
 .dropdown12:hover .dropdown-content{
     display:block;
@@ -203,8 +203,9 @@ ul li:hover .dropdown1
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
     transition-duration: .50s;
-    width: 650px;
+  
     background-color: white;
+    top:138px;
 }
 
 .dropdown12:hover .dropdown-content1 {
@@ -223,8 +224,9 @@ ul li:hover .dropdown1
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
     transition-duration: .50s;
-    width: 650px;
+   
     background-color: white;
+    top:150px;
 }
 
 .dropdown12:hover .dropdown-content2 {
@@ -246,6 +248,7 @@ ul li:hover .dropdown1
     transition-property: transform, opacity, -webkit-transform;
     transition-duration: .50s;
     background-color: white;
+    top:90px;
 }
 
 .dropdown12:hover .dropdown-content3 {
