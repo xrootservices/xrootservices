@@ -257,7 +257,12 @@ ul li:hover .dropdown1
 
 
 
-
+.navbar-nav ml-auto {
+    background-color: red;
+    width: 100%;    
+    position: absolute;
+    color: red;
+}
 
 
 
@@ -2056,6 +2061,7 @@ iframe {
     background-color: #fff;
     padding: 2rem;
     border-radius: 8px;
+   
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -2106,7 +2112,7 @@ ul.recBullet {
 
 
 .dynamicBlog {
-    background: black; /* Gradient background */
+    background: hsl(283, 8%, 83%); /* Gradient background */
     color: #ffffff;
     padding: 60px 0;
 }
@@ -2145,7 +2151,7 @@ ul.recBullet {
 }
 
 .icons img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
 }
 
@@ -2188,7 +2194,7 @@ ul.recBullet {
 
 .container .feek {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.6rem;
 }
 .accordion_item {
     background: #fff;
@@ -2275,6 +2281,7 @@ margin:0px 180px;
 
 }
 
+
     .inner-box:hover {
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
@@ -2308,7 +2315,7 @@ margin:0px 180px;
 
 .inner-box {
     position: relative;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 }
 
 
@@ -2358,20 +2365,26 @@ margin:0px 180px;
         font-size: 0.95rem;
     }
 }
-
-
+.dynamicBlog .container .cust {
+    margin: 10px 0px;
+    padding: 1px 8px;
+   
+}
+ 
+    .dynamicBlog .container .row .section-2-card p {
+        line-height:20px;
+        font-size:15px;
+        
+    }
 
 
 /*web scraping services css end*/
-
-  
-  .et_pb_module_header {
-      font-size: 24px;
-  }
+.et_pb_module_header {
+    font-size: 24px;
+}
   
   .et_pb_promo h2 {
       font-size: 30px;
   }
-
 
 
