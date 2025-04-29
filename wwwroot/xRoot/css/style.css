@@ -57,7 +57,7 @@ h6, .h6 {
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 18.5px;
   font-family: "Poppins", sans-serif;
   text-transform: capitalize;
   padding: 15px 60px;
@@ -145,15 +145,15 @@ ul {
     transform-origin: 50% -50px;
     will-change: transform, opacity;
     transition-property: transform, opacity, -webkit-transform;
-    transition-duration: .50s;
+    transition-delay: .500s;
+ 
     background-color: white;
 }
 
-ul li:hover .dropdown1
-{
+ul li:hover .dropdown1 {
     display: block;
     position: absolute;
-    
+
 }
 .dropdown1 ul{
     margin:0;
@@ -164,6 +164,37 @@ ul li:hover .dropdown1
     display: flex;
     
 }
+
+
+
+/* my custom hover class effect*/
+
+.ani_mation a {
+    position: relative;
+    display: inline-block;
+
+    text-decoration: none;
+    color: black;
+}
+
+    .ani_mation a::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 3px !important;
+        background: linear-gradient(to right,#63c6db 50%, #cdfd74 50%) !important;
+        transition: all 0.5s ease;
+        transform: translateX(-50%);
+    }
+
+    .ani_mation a:hover::after {
+        width: 90%;
+    }
+
+
+
 
 
 
@@ -188,9 +219,11 @@ ul li:hover .dropdown1
     display:block;
 
 }
+.dropdown-item:hover .dropdown-content3{
+    display:block;
+}
 
-
-
+/*
 .dropdown-content1 {
     position: absolute;
     display: none;
@@ -207,11 +240,9 @@ ul li:hover .dropdown1
     background-color: white;
     top:138px;
 }
+*/
 
-.dropdown12:hover .dropdown-content1 {
-    display: block;
-}
-
+/*
 .dropdown-content2 {
     position: absolute;
     display: none;
@@ -229,10 +260,7 @@ ul li:hover .dropdown1
     top:150px;
 }
 
-.dropdown12:hover .dropdown-content2 {
-    display: block;
-}
-
+*/
 
 
 .dropdown-content3 {
@@ -251,9 +279,7 @@ ul li:hover .dropdown1
     top:90px;
 }
 
-.dropdown12:hover .dropdown-content3 {
-    display: block;
-}
+
 
 
 
