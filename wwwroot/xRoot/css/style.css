@@ -9,6 +9,69 @@ VERSION:	Versoin Number
 -------------------------------------------------------------------*/
 /* 1.1 typography */
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+
+/*faq webscrpping*/
+.section-padding {
+    padding: 40px 20px;
+}
+
+.feek {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.accordion_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.accordion_item {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: background 0.3s ease;
+}
+
+.accordion_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+}
+
+    .accordion_head h3 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+
+.plusminus i {
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.accordion_body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding-top: 15px;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+/*faq webscrpping*/
+
 body {
     line-height: 31px;
     font-family: "Poppins", sans-serif;
@@ -2706,6 +2769,135 @@ img.img-fluid {
 /*<!--We offer modern solutions for growing your business-->*/
 
 
-
 /*aboutus main css end*/
 
+/*Why Should You Choose XRootServices*/
+
+.feature-box {
+    background: linear-gradient(to bottom right, #12db238e, #d5e40695);
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(21, 116, 26, 0.05); /* Initial subtle green shadow */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 18px rgba(103, 226, 15, 0.2);
+    border-color: rgb(138, 233, 5);
+    color: rgb(208, 231, 0);
+}
+
+.feature-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*Why Should You Choose XRootServices*/
+
+/*web scarpping faq*/
+
+
+
+.custom-faq-9 {
+    background-color: #ffffff;
+    padding: 60px 20px;
+   
+}
+
+.custom-faq-9 .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.custom-faq-9 .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.custom-faq-9 .col-lg-5,
+.custom-faq-9 .col-lg-7 {
+    flex: 1;
+}
+
+.custom-faq-9 .faq-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.custom-faq-9 .faq-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.custom-faq-9 .faq-arrow svg {
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.custom-faq-9 .faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.custom-faq-9 .faq-item {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.custom-faq-9 .faq-question {
+    font-size: 18px;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.custom-faq-9 .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 15px;
+    color: #444;
+    margin-top: 10px;
+}
+
+.custom-faq-9 .faq-item.faq-active .faq-answer {
+    max-height: 300px;
+}
+
+.custom-faq-9 .arrow {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.custom-faq-9 .faq-item.faq-active .arrow {
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .custom-faq-9 .row {
+        flex-direction: column;
+    }
+}
+
+/*web scarpping faq*/
