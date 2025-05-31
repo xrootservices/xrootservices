@@ -1885,11 +1885,14 @@ textarea.form-control {
     align-items: center;
     padding: 100px 0;
 }
+    .bs-hero-section h1{
+        font-size:2rem;
+    }
 
-.bs-hover-up:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
+    .bs-hover-up:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
 
 .bs-transition {
     transition: all 0.3s ease-in-out;
@@ -2561,6 +2564,7 @@ img.img-fluid {
 
 /* contact us start*/
 
+
 .ct-section {
     background-color: #f9f9f9;
     padding: 60px 0;
@@ -2594,10 +2598,11 @@ img.img-fluid {
     color: white;
     height: 90vh;
 }
-.ct-info-box p{
-    font-size:1rem;
-    
-}
+
+    .ct-info-box p {
+        font-size: 1rem;
+    }
+
 .fix-up .ct-info-item p {
     padding: 0;
     margin: 0;
@@ -2607,7 +2612,6 @@ img.img-fluid {
 .ct-info-item {
     display: flex;
     margin-bottom: 20px;
-
     padding: 10px;
 }
 
@@ -2669,17 +2673,15 @@ img.img-fluid {
 @media (max-width: 768px) {
     .ct-info-box {
         margin-bottom: 30px;
+        height: auto;
     }
 }
 
-
-/*contact us end*/
+/* contact us end*/
 /*how does work it start*/
-
 .custom-subtitle {
     font-size: 1.2rem;
     color: #6c757d;
-  
 }
 
 

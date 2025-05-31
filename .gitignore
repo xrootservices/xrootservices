@@ -1,19 +1,34 @@
-# Ignore Visual Studio and VS Code specific files
-.vs/
-.vscode/
+# From .NET Core 3.0 you can use the command: `dotnet new gitignore` to generate a customizable .gitignore file
 
-# Ignore build and compiled files
-bin/
-obj/
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
 
-# Ignore user-specific and temporary files
-*.user
+# Visual Studio Code
+.vscode
+
+# User-specific files
 *.suo
-*.cache
-*.log
-*.db
-*.pid
+*.user
+*.userosscache
+*.sln.docstates
 
-# Ignore environment settings
-.env
-secrets.json
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
