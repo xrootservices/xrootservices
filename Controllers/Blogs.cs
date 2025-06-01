@@ -2,10 +2,8 @@
 
 namespace xRootServices.Controllers
 {
-    [Route("Web-Scraping-Services")]
-    public class WebScrapingServices : Controller
+    public class Blogs : Controller
     {
-        [HttpGet("")]
         public IActionResult Index()
         {
             return View();

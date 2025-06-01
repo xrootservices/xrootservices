@@ -9,12 +9,16 @@
   <ItemGroup>
     <Compile Remove="Views\NewFolder1\**" />
     <Compile Remove="Views\NewFolder\**" />
+    <Compile Remove="Views\WebDataScraping\NewFolder\**" />
     <Content Remove="Views\NewFolder1\**" />
     <Content Remove="Views\NewFolder\**" />
+    <Content Remove="Views\WebDataScraping\NewFolder\**" />
     <EmbeddedResource Remove="Views\NewFolder1\**" />
     <EmbeddedResource Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="Views\WebDataScraping\NewFolder\**" />
     <None Remove="Views\NewFolder1\**" />
     <None Remove="Views\NewFolder\**" />
+    <None Remove="Views\WebDataScraping\NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\WebDataScraping\NewFolder\" />
     <Folder Include="wwwroot\xRoot\css\NewFolder\" />
     <Folder Include="wwwroot\xRoot\images\webscrapingservices\" />
   </ItemGroup>
