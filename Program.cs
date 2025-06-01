@@ -12,6 +12,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 25)))); // change version accordingly
 
 var app = builder.Build();
+app.MapControllerRoute(
+    name: "blogDetails",
+    pattern: "blogs/{slug}",
+    defaults: new { controller = "Blogs", action = "Details" });
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

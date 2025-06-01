@@ -37,16 +37,31 @@ namespace xRootServices.Controllers
 
         //    return View(posts);
         //}
+        [HttpGet("/blog/{slug}")]
+        public async Task<IActionResult> Details(string slug)
+        {
+            if (string.IsNullOrEmpty(slug))
+            {
+                return BadRequest();
+            }
 
+            var blog = await _context.Blogs
+                .Include(b => b.Author) 
+                .FirstOrDefaultAsync(b => b.slug == slug);
 
+            if (blog == null)
+            {
+                return NotFound();
+            }
+
+            return View(blog);
+        }
         public async Task<IActionResult> Index(int page = 1)
         {
             int pageSize = 12; // blogs per page
 
-            // Get total count for pagination calculation
             var totalBlogs = await _context.Blogs.CountAsync();
 
-            // Fetch only blogs for the current page, ordered by CreatedAt desc
             var blogs = await _context.Blogs
                 .OrderByDescending(b => b.created_at)
                 .Skip((page - 1) * pageSize)
@@ -61,7 +76,6 @@ namespace xRootServices.Controllers
                 })
                 .ToListAsync();
 
-            // Prepare view model with pagination info
             var viewModel = new BlogListViewModel
             {
                 Blogs = blogs,

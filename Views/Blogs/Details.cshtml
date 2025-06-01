@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_header_footer.cshtml";
+}
+
+<section class="section-5 section-padding m-4">
+    <div class="container my-5">
+        <h1 class="mb-4">@Model.title</h1>
+
+        <div class="row">
+            <!-- Blog Content (70%) -->
+            <div class="col-md-8">
+                <div id="blog-content">
+                    @Html.Raw(Model.content)
+                </div>
+            </div>
+
+            <!-- Author Info + Table of Contents (30%) -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">About the Author</h5>
+                        <p><strong>@Model.Author?.name</strong></p>
+                        <p>@Model.Author?.Description</p>
+                    </div>
+                </div>
+
+                <div id="toc" class="bg-light p-3 rounded">
+                    <h5>Table of Contents</h5>
+                    @* <ul id="tocList" class="list-unstyled"></ul> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
