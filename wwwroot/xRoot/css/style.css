@@ -2903,3 +2903,163 @@ img.img-fluid {
 }
 
 /*web scarpping faq*/
+
+
+/*--------------------------------------------------------------
+    # Steps Section
+    --------------------------------------------------------------*/
+.steps .steps-wrapper {
+    position: relative;
+    padding: 20px 0;
+}
+
+    .steps .steps-wrapper::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.steps .step-item {
+    margin-bottom: 50px;
+    width: 100%;
+    position: relative;
+}
+
+    .steps .step-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .steps .step-item:nth-child(even) .step-content {
+        flex-direction: row-reverse;
+    }
+
+.steps .step-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.steps .step-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background-color: var(--surface-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    transition: all 0.3s ease-in-out;
+}
+
+    .steps .step-icon i {
+        font-size: 32px;
+        color: var(--accent-color);
+        transition: transform 0.3s ease-in-out;
+    }
+
+.steps .step-info {
+    flex: 1;
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+    .steps .step-info:hover {
+        transform: translateY(-5px);
+    }
+
+.steps .step-number {
+    display: inline-block;
+    font-family: var(--heading-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.steps h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.steps p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .steps .steps-wrapper::before {
+        left: 25px;
+    }
+
+    .steps .step-item .step-content {
+        flex-direction: row !important;
+    }
+
+    .steps .step-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+        .steps .step-icon i {
+            font-size: 24px;
+        }
+
+    .steps .step-info {
+        padding: 20px;
+    }
+
+    .steps h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .steps .step-content {
+        gap: 20px;
+    }
+
+    .steps .step-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+        .steps .step-icon i {
+            font-size: 20px;
+        }
+
+    .steps .step-info {
+        padding: 15px;
+    }
+
+    .steps h3 {
+        font-size: 1.2rem;
+    }
+
+    .steps p {
+        font-size: 0.95rem;
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+    # Steps Section  End
+    --------------------------------------------------------------*/

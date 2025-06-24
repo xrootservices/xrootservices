@@ -1,4 +1,4 @@
-﻿
+﻿@model xRootServices.Models.ContractModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_header_footer.cshtml";
@@ -69,8 +69,10 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="col-lg-7">
+                <!-- Contact Form OLD -->
+                
+
+               @*  <div class="col-lg-7">
                     <div class="ct-contact-form">
                         <h3>Get In Touch</h3>
                         <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
@@ -99,7 +101,50 @@
                         </form>
 
                     </div>
+                </div> *@
+
+
+                @* END OF CONTRACT PAGE FORM *@
+
+                @* MY NEW CONTRACT FORM *@
+            <div class="col-lg-7">
+                <div class="ct-contact-form">
+                    <h3>Get In Touch</h3>
+                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-info">@ViewBag.Message</div>
+                    }
+
+                    <form asp-action="Index" method="post" class="php-email-form">
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <input asp-for="Name" class="form-control" placeholder="Your Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input asp-for="Email" class="form-control" placeholder="Your Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="col-12">
+                                <input asp-for="Subject" class="form-control" placeholder="Subject" />
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 my-4">
+                                <textarea asp-for="Description" class="form-control" rows="6" placeholder="Message"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary my-4">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
+
+
+
             </div>
         </div>
     </section>

@@ -1,0 +1,183 @@
+/*
+SQLyog Community v13.2.0 (64 bit)
+MySQL - 8.0.33 : Database - testingfortest
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`testingfortest` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `testingfortest`;
+
+/*Table structure for table `authors` */
+
+DROP TABLE IF EXISTS `authors`;
+
+CREATE TABLE `authors` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `Email` varchar(200) DEFAULT NULL,
+  `description` text,
+  `profile_image_url` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*Data for the table `authors` */
+
+insert  into `authors`(`id`,`name`,`Email`,`description`,`profile_image_url`,`created_at`) values 
+(1,'John Doe',NULL,'Tech enthusiast and blogger.','https://example.com/images/john.jpg','2025-05-29 00:00:36'),
+(2,'Jane Smith',NULL,'Lifestyle and travel writer.','https://example.com/images/jane.jpg','2025-05-29 00:00:36'),
+(3,'Mike Johnson',NULL,'Food lover and recipe creator.','https://example.com/images/mike.jpg','2025-05-29 00:00:36'),
+(4,'Alice Johnson','alice.johnson@example.com','Tech enthusiast and software developer.','https://randomuser.me/api/portraits/women/21.jpg','2024-01-10 09:00:00'),
+(5,'Bob Smith','bob.smith@example.com','Travel blogger and photographer.','https://randomuser.me/api/portraits/men/34.jpg','2024-02-15 11:30:00'),
+(6,'Carla Martinez','carla.martinez@example.com','Health and wellness coach.','https://randomuser.me/api/portraits/women/45.jpg','2024-03-22 14:20:00'),
+(7,'David Lee','david.lee@example.com','Financial advisor and writer.','https://randomuser.me/api/portraits/men/56.jpg','2024-04-10 10:15:00'),
+(8,'Emma Wilson','emma.wilson@example.com','Lifestyle blogger and photographer.','https://randomuser.me/api/portraits/women/67.jpg','2024-05-05 08:50:00'),
+(9,'Frank Harris','frank.harris@example.com','Entrepreneur and startup mentor.','https://randomuser.me/api/portraits/men/72.jpg','2024-06-15 09:45:00'),
+(10,'Grace Kim','grace.kim@example.com','Digital marketing expert.','https://randomuser.me/api/portraits/women/88.jpg','2024-07-12 10:30:00'),
+(11,'Henry Thompson','henry.thompson@example.com','Full-stack developer and tech writer.','https://randomuser.me/api/portraits/men/23.jpg','2024-08-01 14:10:00'),
+(12,'Isabella Garcia','isabella.garcia@example.com','Travel enthusiast and food blogger.','https://randomuser.me/api/portraits/women/54.jpg','2024-09-20 16:00:00'),
+(13,'Jack Miller','jack.miller@example.com','Fitness coach and motivational speaker.','https://randomuser.me/api/portraits/men/19.jpg','2024-10-11 12:00:00');
+
+/*Table structure for table `blog_categories` */
+
+DROP TABLE IF EXISTS `blog_categories`;
+
+CREATE TABLE `blog_categories` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*Data for the table `blog_categories` */
+
+insert  into `blog_categories`(`id`,`name`,`slug`) values 
+(1,'Technology','technology'),
+(2,'Travel','travel'),
+(3,'Food','food'),
+(4,'Programming','programming');
+
+/*Table structure for table `blog_category_map` */
+
+DROP TABLE IF EXISTS `blog_category_map`;
+
+CREATE TABLE `blog_category_map` (
+  `blog_id` int NOT NULL,
+  `category_id` int NOT NULL,
+  PRIMARY KEY (`blog_id`,`category_id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `blog_category_map_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `blog_category_map_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `blog_categories` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*Data for the table `blog_category_map` */
+
+insert  into `blog_category_map`(`blog_id`,`category_id`) values 
+(1,1),
+(2,2),
+(3,3),
+(1,4);
+
+/*Table structure for table `blogs` */
+
+DROP TABLE IF EXISTS `blogs`;
+
+CREATE TABLE `blogs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `cover_image_url` varchar(255) DEFAULT NULL,
+  `meta_keywords` varchar(512) DEFAULT NULL,
+  `meta_description` varchar(512) DEFAULT NULL,
+  `author_id` int DEFAULT NULL,
+  `is_published` tinyint(1) DEFAULT '0',
+  `date_published` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `fk_author` (`author_id`),
+  CONSTRAINT `fk_author` FOREIGN KEY (`author_id`) REFERENCES `authors` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*Data for the table `blogs` */
+
+insert  into `blogs`(`id`,`title`,`slug`,`content`,`cover_image_url`,`meta_keywords`,`meta_description`,`author_id`,`is_published`,`date_published`,`created_at`,`updated_at`) values 
+(1,'Introduction to .NET Core','introduction-to-dotnet-core','<p>Welcome to the .NET Core tutorial. Learn how to build powerful apps.</p>','https://example.com/images/dotnetcore.jpg','.NET Core,Programming,Tutorial','A beginner’s guide to .NET Core programming.',1,1,'2025-05-01 10:00:00','2025-05-29 00:00:36','2025-05-29 00:00:36'),
+(2,'Top 10 Travel Destinations','top-10-travel-destinations','<p>Explore the best travel spots around the world.</p>','https://example.com/images/travel.jpg','Travel,Vacation,Destinations','Discover the top 10 travel destinations worldwide.',2,1,'2025-05-05 14:30:00','2025-05-29 00:00:36','2025-05-29 00:00:36'),
+(3,'Easy Homemade Pasta Recipes','easy-homemade-pasta','<p>Learn how to make pasta from scratch with simple recipes.</p>','https://example.com/images/pasta.jpg','Cooking,Pasta,Recipes','Simple and delicious homemade pasta recipes.',3,1,'2025-05-10 09:00:00','2025-05-29 00:00:36','2025-05-29 00:00:36'),
+(4,'Understanding ASP.NET Core','understanding-aspnet-core','A detailed guide on ASP.NET Core framework and its benefits.','https://picsum.photos/id/1011/600/400','ASP.NET Core, .NET, Web Development','Learn the essentials of ASP.NET Core.',1,1,'2025-05-01 10:00:00','2025-04-30 09:00:00','2025-04-30 09:00:00'),
+(5,'Introduction to Entity Framework Core','intro-to-entity-framework-core','Learn about Entity Framework Core for database access.','https://picsum.photos/id/1012/600/400','EF Core, ORM, Database','Introduction to EF Core basics.',2,1,'2025-05-02 11:00:00','2025-04-29 09:00:00','2025-04-29 09:00:00'),
+(6,'Getting Started with React','getting-started-with-react','This post covers how to start developing with React.','https://picsum.photos/id/1013/600/400','React, JavaScript, Frontend','A beginner’s guide to React.',3,1,'2025-05-03 12:00:00','2025-04-28 09:00:00','2025-04-28 09:00:00'),
+(7,'Mastering JavaScript ES6 Features','mastering-javascript-es6','Deep dive into ES6 features like arrow functions, promises, and classes.','https://picsum.photos/id/1014/600/400','JavaScript, ES6, Programming','Learn new JavaScript ES6 features.',1,1,'2025-05-04 13:00:00','2025-04-27 09:00:00','2025-04-27 09:00:00'),
+(8,'CSS Grid Layout Tutorial','css-grid-layout-tutorial','Learn how to build responsive layouts using CSS Grid.','https://picsum.photos/id/1015/600/400','CSS, Grid, Web Design','Tutorial on CSS Grid Layout.',2,1,'2025-05-05 14:00:00','2025-04-26 09:00:00','2025-04-26 09:00:00'),
+(9,'Docker for Beginners','docker-for-beginners','Understand the basics of Docker containers and how to use them.','https://picsum.photos/id/1016/600/400','Docker, Containers, DevOps','Beginner guide to Docker.',3,1,'2025-05-06 15:00:00','2025-04-25 09:00:00','2025-04-25 09:00:00'),
+(10,'Building REST APIs with .NET Core','building-rest-apis-dotnet-core','Step-by-step guide to building RESTful APIs in .NET Core.','https://picsum.photos/id/1017/600/400','REST API, .NET Core, Backend','Create REST APIs using .NET Core.',1,1,'2025-05-07 16:00:00','2025-04-24 09:00:00','2025-04-24 09:00:00'),
+(11,'Understanding Async/Await in C#','understanding-async-await-csharp','Learn asynchronous programming in C# with async and await.','https://picsum.photos/id/1018/600/400','C#, Async, Programming','Async/await explained for C# developers.',2,1,'2025-05-08 17:00:00','2025-04-23 09:00:00','2025-04-23 09:00:00'),
+(12,'Introduction to Kubernetes','intro-to-kubernetes','Basics of Kubernetes and container orchestration.','https://picsum.photos/id/1019/600/400','Kubernetes, Containers, DevOps','Kubernetes basics for beginners.',3,1,'2025-05-09 18:00:00','2025-04-22 09:00:00','2025-04-22 09:00:00'),
+(13,'Vue.js Fundamentals','vuejs-fundamentals','Getting started with Vue.js framework for building UI.','https://picsum.photos/id/1020/600/400','Vue.js, JavaScript, Frontend','Beginner guide to Vue.js.',1,1,'2025-05-10 19:00:00','2025-04-21 09:00:00','2025-04-21 09:00:00'),
+(14,'Microservices Architecture Explained','microservices-architecture-explained','Learn what microservices architecture is and why it matters.','https://picsum.photos/id/1021/600/400','Microservices, Architecture, Backend','Overview of microservices architecture.',2,1,'2025-05-11 20:00:00','2025-04-20 09:00:00','2025-04-20 09:00:00'),
+(15,'Getting Started with Python','getting-started-python','An introductory guide to programming with Python.','https://picsum.photos/id/1022/600/400','Python, Programming, Beginner','Learn Python basics and setup.',3,1,'2025-05-12 21:00:00','2025-04-19 09:00:00','2025-04-19 09:00:00'),
+(16,'SEO Best Practices for Blogs','seo-best-practices-blogs','Tips and tricks to improve your blog SEO.','https://picsum.photos/id/1023/600/400','SEO, Blogging, Marketing','Improve blog SEO with these tips.',1,1,'2025-05-13 22:00:00','2025-04-18 09:00:00','2025-04-18 09:00:00'),
+(17,'Introduction to GraphQL','introduction-to-graphql','Learn the basics of GraphQL and how it differs from REST.','https://picsum.photos/id/1024/600/400','GraphQL, API, Backend','Beginner guide to GraphQL.',2,1,'2025-05-14 23:00:00','2025-04-17 09:00:00','2025-04-17 09:00:00'),
+(18,'Tips for Writing Clean Code','tips-for-writing-clean-code','How to write maintainable and clean code in any language.','https://picsum.photos/id/1025/600/400','Clean Code, Programming, Best Practices','Write cleaner code easily.',3,1,'2025-05-15 08:00:00','2025-04-16 09:00:00','2025-04-16 09:00:00'),
+(19,'Docker Compose Basics','docker-compose-basics','Manage multi-container Docker apps with Docker Compose.','https://picsum.photos/id/1026/600/400','Docker, Compose, DevOps','Intro to Docker Compose.',1,1,'2025-05-16 09:00:00','2025-04-15 09:00:00','2025-04-15 09:00:00'),
+(20,'Understanding JWT Authentication','understanding-jwt-authentication','Secure your APIs using JWT tokens.','https://picsum.photos/id/1027/600/400','JWT, Authentication, Security','JWT authentication basics.',2,1,'2025-05-17 10:00:00','2025-04-14 09:00:00','2025-04-14 09:00:00'),
+(21,'Unit Testing in .NET Core','unit-testing-dotnet-core','Learn how to write unit tests in .NET Core.','https://picsum.photos/id/1028/600/400','Unit Testing, .NET Core, TDD','Guide to unit testing.',3,1,'2025-05-18 11:00:00','2025-04-13 09:00:00','2025-04-13 09:00:00'),
+(22,'Responsive Web Design Tips','responsive-web-design-tips','Make your website look great on all devices.','https://picsum.photos/id/1029/600/400','Responsive Design, CSS, Web','Tips for responsive design.',1,1,'2025-05-19 12:00:00','2025-04-12 09:00:00','2025-04-12 09:00:00'),
+(23,'Introduction to TypeScript','introduction-to-typescript','Why TypeScript is useful and how to start.','https://picsum.photos/id/1030/600/400','TypeScript, JavaScript, Programming','Beginner guide to TypeScript.',2,1,'2025-05-20 13:00:00','2025-04-11 09:00:00','2025-04-11 09:00:00'),
+(24,'Building a Chatbot with Python','building-chatbot-python','Create your own chatbot using Python libraries.','https://picsum.photos/id/1031/600/400','Chatbot, Python, AI','Chatbot development basics.',3,1,'2025-05-21 14:00:00','2025-04-10 09:00:00','2025-04-10 09:00:00'),
+(25,'Understanding OAuth 2.0','understanding-oauth-2-0','How OAuth 2.0 works for secure authorization.','https://picsum.photos/id/1032/600/400','OAuth, Security, API','OAuth 2.0 explained.',1,1,'2025-05-22 15:00:00','2025-04-09 09:00:00','2025-04-09 09:00:00'),
+(26,'Introduction to NoSQL Databases','introduction-nosql-databases','Differences between NoSQL and SQL databases.','https://picsum.photos/id/1033/600/400','NoSQL, Databases, MongoDB','NoSQL basics.',2,1,'2025-05-23 16:00:00','2025-04-08 09:00:00','2025-04-08 09:00:00'),
+(27,'Getting Started with Angular','getting-started-with-angular','Learn the basics of Angular framework.','https://picsum.photos/id/1034/600/400','Angular, JavaScript, Frontend','Angular introduction.',3,1,'2025-05-24 17:00:00','2025-04-07 09:00:00','2025-04-07 09:00:00'),
+(28,'Introduction to Cloud Computing','introduction-cloud-computing','Overview of cloud computing services and benefits.','https://picsum.photos/id/1035/600/400','Cloud, AWS, Azure','Cloud computing basics.',1,1,'2025-05-25 18:00:00','2025-04-06 09:00:00','2025-04-06 09:00:00'),
+(29,'Getting Started with Machine Learning','getting-started-machine-learning','Introduction to machine learning concepts and libraries.','https://picsum.photos/id/1036/600/400','Machine Learning, AI, Python','Machine learning basics.',2,1,'2025-05-26 19:00:00','2025-04-05 09:00:00','2025-04-05 09:00:00'),
+(30,'Building Mobile Apps with Flutter','building-mobile-apps-flutter','Create beautiful mobile apps using Flutter.','https://picsum.photos/id/1037/600/400','Flutter, Mobile, Dart','Flutter app development.',3,1,'2025-05-27 20:00:00','2025-04-04 09:00:00','2025-04-04 09:00:00'),
+(31,'Introduction to Blockchain','introduction-blockchain','Basics of blockchain technology and applications.','https://picsum.photos/id/1038/600/400','Blockchain, Cryptocurrency, Tech','Blockchain explained.',1,1,'2025-05-28 21:00:00','2025-04-03 09:00:00','2025-04-03 09:00:00'),
+(32,'Deep Dive into ASP.NET Core Middleware','deep-dive-into-aspnet-core-middleware','<h2>What is Middleware?</h2><p>Middleware is software that is assembled into an application pipeline to handle requests and responses. Each component:</p><ul><li>Chooses whether to pass the request to the next component.</li><li>Can perform work before and after the next component in the pipeline.</li></ul><p>ASP.NET Core has built-in middleware for routing, authentication, error handling, and more.</p><h3>Creating Custom Middleware</h3><p>To create custom middleware, define a class with an <code>Invoke</code> method that accepts an <code>HttpContext</code>.</p><pre><code>public class CustomMiddleware { public async Task Invoke(HttpContext context) { // Your code here await _next(context); } }</code></pre><p>Register the middleware in <code>Startup.cs</code> using <code>app.UseMiddleware&lt;CustomMiddleware&gt;();</code></p><h3>Benefits of Middleware</h3><p>Middleware allows modularity and clean separation of concerns.</p><p>Learn more at <a href=\"https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/\">Microsoft Docs</a>.</p>','https://picsum.photos/id/1041/600/400','ASP.NET Core, Middleware, Web Development','In-depth explanation of ASP.NET Core middleware and how to create custom middleware.',1,1,'2025-06-01 10:00:00','2025-05-31 09:00:00','2025-05-31 09:00:00'),
+(33,'Introduction to Responsive Web Design','introduction-to-responsive-web-design','<h2>Why Responsive Design?</h2><p>Responsive web design ensures your website looks great on any device, from desktops to smartphones.</p><h3>Key Techniques</h3><ol><li><strong>Flexible Grids:</strong> Use relative units like percentages.</li><li><strong>Flexible Images:</strong> Images that scale within their containers.</li><li><strong>Media Queries:</strong> Apply CSS styles based on device characteristics.</li></ol><h3>Example Media Query</h3><pre><code>@media only screen and (max-width: 600px) { body { background-color: lightblue; } }</code></pre><p>Practice responsive design to improve user experience and SEO.</p><p>Resources: <a href=\"https://www.w3schools.com/css/css_rwd_intro.asp\">W3Schools</a></p>','https://picsum.photos/id/1042/600/400','Responsive Design, CSS, Web Development','Learn responsive web design techniques to build mobile-friendly sites.',2,1,'2025-06-02 11:00:00','2025-06-01 09:00:00','2025-06-01 09:00:00'),
+(34,'Building RESTful APIs with Node.js and Express','building-restful-apis-node-express','<h2>What is a RESTful API?</h2><p>REST stands for Representational State Transfer, an architectural style for designing networked applications.</p><h3>Setting up Express</h3><p>Express.js is a minimal and flexible Node.js web application framework.</p><pre><code>const express = require(\'express\'); const app = express(); app.use(express.json());</code></pre><h3>Example Endpoint</h3><pre><code>app.get(\'/api/items\', (req, res) =&gt; { res.json([ { id: 1, name: \'Item One\' }, { id: 2, name: \'Item Two\' } ]); });</code></pre><p>Test your API using tools like Postman or curl.</p><p>Learn more at <a href=\"https://expressjs.com/en/starter/basic-routing.html\">Express Docs</a>.</p>','https://picsum.photos/id/1043/600/400','Node.js, Express, REST API, Backend','Guide to building RESTful APIs using Node.js and Express framework.',3,1,'2025-06-03 12:00:00','2025-06-02 09:00:00','2025-06-02 09:00:00'),
+(35,'Understanding CSS Flexbox','understanding-css-flexbox','<h2>What is Flexbox?</h2><p>Flexbox is a CSS layout mode designed for arranging items in one dimension.</p><h3>Main Concepts</h3><ul><li><strong>Flex Container:</strong> Parent element with <code>display: flex;</code></li><li><strong>Flex Items:</strong> Children inside the container.</li><li><strong>Axis:</strong> Main and cross axis for layout direction.</li></ul><h3>Example</h3><pre><code>.container { display: flex; flex-direction: row; justify-content: center; align-items: center; }</code></pre><p>Flexbox helps build responsive and dynamic layouts easily.</p><p>More info at <a href=\"https://css-tricks.com/snippets/css/a-guide-to-flexbox/\">CSS-Tricks</a>.</p>','https://picsum.photos/id/1044/600/400','CSS, Flexbox, Web Design','Comprehensive guide to CSS Flexbox layout and its properties.',1,1,'2025-06-04 13:00:00','2025-06-03 09:00:00','2025-06-03 09:00:00'),
+(36,'Getting Started with Python for Data Science','getting-started-python-data-science','<h2>Python for Data Science</h2><p>Python is widely used for data analysis, visualization, and machine learning.</p><h3>Popular Libraries</h3><ul><li><strong>Pandas:</strong> Data manipulation.</li><li><strong>NumPy:</strong> Numerical operations.</li><li><strong>Matplotlib:</strong> Data visualization.</li><li><strong>Scikit-learn:</strong> Machine learning algorithms.</li></ul><h3>Sample Code</h3><pre><code>import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv(\'data.csv\')\n\n# Plot data\ndf.plot(kind=\'line\')\nplt.show()</code></pre><p>Python offers great tools to start your data science journey.</p><p>Learn more at <a href=\"https://www.datacamp.com/courses/intro-to-python-for-data-science\">DataCamp</a>.</p>','https://picsum.photos/id/1045/600/400','Python, Data Science, Machine Learning','Introduction to Python programming for data science applications.',2,1,'2025-06-05 14:00:00','2025-06-04 09:00:00','2025-06-04 09:00:00');
+
+/*Table structure for table `users` */
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Username` varchar(100) NOT NULL,
+  `Email` varchar(255) NOT NULL,
+  `PasswordHash` varchar(255) NOT NULL,
+  `Role` varchar(50) NOT NULL,
+  `IsActive` tinyint(1) NOT NULL DEFAULT '1',
+  `CreatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdatedAt` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Username` (`Username`),
+  UNIQUE KEY `Email` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+/*Data for the table `users` */
+
+insert  into `users`(`Id`,`Username`,`Email`,`PasswordHash`,`Role`,`IsActive`,`CreatedAt`,`UpdatedAt`) values 
+(1,'admin','admin@example.com','hashed_password_here','Administrator',1,'2025-05-28 23:56:59','2025-05-28 23:56:59'),
+(2,'editor','editor@example.com','hashed_password_here','Editor',1,'2025-05-28 23:56:59','2025-05-28 23:56:59'),
+(3,'user','user@example.com','hashed_password_here','User',1,'2025-05-28 23:56:59','2025-05-28 23:56:59');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
